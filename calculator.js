@@ -1,25 +1,20 @@
-function appendTodisplay(value){
+let display = document.getElementById('display');
 
-    document.getElementById('display').value+= value
-}
-function cleardisplay(){
-
-    document.getElementById('display').value = ''
+// Function to append numbers and operators to the display
+function appendToDisplay(value) {
+    display.value += value;
 }
 
-function calculate(){
+// Function to clear the display
+function clearDisplay() {
+    display.value = '';
+}
 
-
-    let express = document.getElementById('display').value
-
-    try{
-        let result=  eval(express)
-
-document.getElementById('display').value = result;
-    } catch(error){
-
-        document.getElementById('display').value = 'error';
+// Function to calculate the result
+function calculate() {
+    try {
+        display.value = eval(display.value); // Evaluate the expression
+    } catch (error) {
+        display.value = 'Error'; // Display error if expression is invalid
     }
-
-    
 }
